@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meu Controle Financeiro</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="top"><div class="wrap">
+    <span class="brand">● Meu Controle Financeiro</span>
+    <p>Organize suas receitas e despesas e reflita sobre seus hábitos de consumo.</p>
+  </div></header>
+  <main class="wrap">
+    <section aria-labelledby="painel">
+      <div class="heading"><div><small>VISÃO GERAL</small><h1 id="painel">Saúde financeira</h1></div>
+      <button id="atualizar" type="button" class="outline">Atualizar dados</button></div>
+      <div class="cards">
+        <article class="card"><span>Saldo total</span><strong id="saldo">R$ 0,00</strong><small>Receitas menos despesas</small></article>
+        <article class="card"><span>Total de despesas</span><strong id="despesas">R$ 0,00</strong><small>Gastos registrados</small></article>
+        <article class="card impulse"><span>Gastos por impulso</span><strong id="impulso">R$ 0,00</strong><small>Consumo consciente • ODS 12</small></article>
+      </div>
+    </section>
+    <section class="columns">
+      <article class="panel">
+        <h2>Nova transação</h2><p class="hint">Registre uma movimentação financeira.</p>
+        <form id="form">
+          <label>Descrição<input id="descricao" required minlength="2" maxlength="120" placeholder="Ex.: Supermercado"></label>
+          <div class="grid">
+            <label>Valor (R$)<input id="valor" type="number" min="0.01" step="0.01" required></label>
+            <label>Tipo<select id="tipo"><option value="despesa">Despesa</option><option value="receita">Receita</option></select></label>
+          </div>
+          <label>Categoria<select id="categoria"><option>Moradia</option><option>Alimentação</option><option>Educação</option><option>Transporte</option><option>Saúde</option><option>Lazer</option><option>Salário</option><option>Outros</option></select></label>
+          <fieldset><legend>Esta transação foi consciente ou essencial?</legend>
+            <label class="radio"><input type="radio" name="consciente" value="true" checked> Sim, planejada ou essencial</label>
+            <label class="radio"><input type="radio" name="consciente" value="false"> Não, por impulso</label>
+          </fieldset>
+          <button id="salvar" type="submit" class="primary">Salvar transação</button>
+          <p id="mensagem" role="status" aria-live="polite"></p>
+        </form>
+      </article>
+      <article class="panel"><h2>Histórico de transações</h2><p class="hint">Movimentações registradas no banco de dados.</p>
+        <div id="historico" class="historico" aria-live="polite"><p class="empty">Carregando...</p></div>
+      </article>
+    </section>
+    <footer>Projeto acadêmico • Web Mobile • Educação financeira</footer>
+  </main>
+  <script src="/js/main.js" defer></script>
+</body>
+</html>
