@@ -1,21 +1,12 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-
-@Schema({ timestamps: true, versionKey: false })
+import { HydratedDocument } from 'mongoose';
+export type TransacaoDocument = HydratedDocument<Transacao>;
+@Schema({timestamps:true,versionKey:false})
 export class Transacao {
-  @Prop({ required: true, trim: true })
-  descricao!: string;
-
-  @Prop({ required: true, min: 0.01 })
-  valor!: number;
-
-  @Prop({ required: true, enum: ['receita', 'despesa'] })
-  tipo!: 'receita' | 'despesa';
-
-  @Prop({ required: true, trim: true })
-  categoria!: string;
-
-  @Prop({ required: true, type: Boolean })
-  consumoConsciente!: boolean;
+  @Prop({required:true,trim:true}) descricao:string;
+  @Prop({required:true,min:0}) valor:number;
+  @Prop({required:true,enum:['receita','despesa']}) tipo:'receita'|'despesa';
+  @Prop({required:true,trim:true}) categoria:string;
+  @Prop({required:true,type:Boolean}) consumoConsciente:boolean;
 }
-
 export const TransacaoSchema = SchemaFactory.createForClass(Transacao);
