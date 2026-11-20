@@ -1,0 +1,69 @@
+/* Variáveis e fontes */
+:root {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: #172b2b;
+  background: #f3f7f5;
+}
+
+/* Reset */
+* { box-sizing: border-box; }
+body { margin: 0; }
+
+/* Estilos básicos: Mobile First */
+.wrap { width: min(1100px, calc(100% - 32px)); margin: auto; }
+.top { background: #104a3b; color: white; padding: 25px 0 30px; }
+.brand { font-weight: 800; font-size: 1.25rem; }
+.top p { color: #cce9d9; line-height: 1.5; margin: 8px 0 0; }
+main { padding: 25px 0; }
+.heading { display: flex; gap: 12px; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+.heading small { color: #167455; font-weight: 800; letter-spacing: .1em; }
+h1 { font-size: 1.65rem; margin: 5px 0 20px; }
+h2 { font-size: 1.3rem; margin: 0 0 6px; }
+.cards { display: grid; gap: 12px; }
+.card, .panel { background: white; border: 1px solid #dce8e2; border-radius: 14px; padding: 20px; }
+.card { display: flex; flex-direction: column; gap: 9px; }
+.card span { color: #52665f; font-weight: 600; }
+.card strong { font-size: 1.7rem; color: #0f5843; overflow-wrap: anywhere; }
+.card small, .hint { color: #61746b; }
+.impulse { background: #fff3f0; border-color: #ffd5cc; }
+.impulse strong { color: #b83b2f; }
+.columns { display: grid; gap: 16px; margin-top: 20px; }
+.panel { min-width: 0; }
+.hint { margin: 0 0 20px; font-size: .9rem; }
+form { display: grid; gap: 14px; }
+label { display: grid; gap: 6px; font-weight: 600; font-size: .92rem; }
+input, select { width: 100%; border: 1px solid #b9cdc3; border-radius: 9px; padding: 12px; font: inherit; background: white; min-height: 45px; }
+input:focus, select:focus, button:focus-visible { outline: 3px solid #92dfb5; outline-offset: 1px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+fieldset { border: 1px solid #dce8e2; border-radius: 10px; padding: 12px; }
+legend { font-weight: 700; font-size: .9rem; }
+.radio { display: flex; align-items: center; gap: 8px; margin: 8px 0; font-weight: 400; }
+.radio input { width: auto; min-height: 0; accent-color: #17664c; }
+button { border-radius: 9px; padding: 11px 15px; cursor: pointer; font-weight: 700; min-height: 44px; }
+.primary { background: #126448; color: white; border: 0; }
+.primary:disabled { opacity: .6; }
+.outline { background: white; border: 1px solid #126448; color: #126448; }
+#mensagem { margin: 0; min-height: 1.5em; font-size: .9rem; }
+.error { color: #b12626; }
+.success { color: #126448; }
+.historico { display: grid; gap: 10px; }
+.item { border: 1px solid #e2ebe5; border-radius: 10px; padding: 12px; display: flex; justify-content: space-between; gap: 10px; align-items: center; }
+.item strong { display: block; }
+.item small { display: block; color: #697a70; margin-top: 4px; }
+.amount { white-space: nowrap; font-weight: 800; color: #126448; }
+.amount.out { color: #b83b2f; }
+.empty { color: #697a70; text-align: center; padding: 22px; }
+footer { text-align: center; color: #697a70; font-size: .82rem; padding: 30px 0; }
+
+/* Celulares estreitos */
+@media (max-width: 360px) {
+  .grid { grid-template-columns: 1fr; }
+  .item { align-items: flex-start; flex-direction: column; }
+}
+
+/* Telas maiores */
+@media (min-width: 650px) {
+  .cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .columns { grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); }
+  .top { padding: 35px 0 40px; }
+}
